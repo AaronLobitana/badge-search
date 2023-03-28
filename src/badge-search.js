@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
 
 class BadgeSearch extends LitElement {
   static properties = {
@@ -62,7 +61,6 @@ class BadgeSearch extends LitElement {
       });
     }
 
-  
   
 
   render() {
