@@ -7,7 +7,7 @@ class MySearchBar extends LitElement {
 
   static styles = css`
     :host {
-      font-size: 20px;
+      
     }
     .searchBar {
       width: 500px;

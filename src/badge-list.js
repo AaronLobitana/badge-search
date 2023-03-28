@@ -18,7 +18,6 @@ export class MyBadgeList extends LitElement{
     constructor() {
         super();
         this.badges = [];
-        this.name = 'Aaron Lobitana';
         this.updateBadges();
     }
 
@@ -56,12 +55,11 @@ export class MyBadgeList extends LitElement{
 
     render() {
         return html`
-        <h2>${this.name}</h2>
         <div class="box">
 
-            ${this.cards.map(card => html`
+            ${this.badges.map(badge => html`
             <div class="item">
-                <mini-resume imageURL="${card.imageURL}" name="${card.name}" extrainfolabel="${card.extrainfolabel}" ?shadow-enable="${card.shadowEnable}" new-color="${card.newColor}" memeTop="${card.memeTop}" memeBottom="${card.memeBottom}" ?opened="${card.opened}"></mini-resume>
+                
             </div>
             `)}
 

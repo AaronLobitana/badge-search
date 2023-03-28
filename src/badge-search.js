@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import "./search-bar";
 
 
 class BadgeSearch extends LitElement {
@@ -18,6 +19,11 @@ class BadgeSearch extends LitElement {
       font-size: 20px;
       color: red;
     }
+
+    .wrapper{
+      background-color: white;
+    }
+    
   `;
 
   constructor() {
@@ -46,8 +52,7 @@ class BadgeSearch extends LitElement {
     this.searchThis(this.data, this.searchForThis);
   }
 
-  searchThis(Array, searchForThis)
-    {
+  searchThis(Array, searchForThis){
       return Array.filter((thing) => 
       {
         for (var item in thing)
@@ -61,10 +66,18 @@ class BadgeSearch extends LitElement {
       });
     }
 
-  
-
   render() {
     return html`
+
+      
+      <div class="wrapper">
+
+        <div class="searchBar">
+          <search-bar></search-bar>
+        </div>
+
+        
+      </div>
 
       <div class="blah">
         <h2>You are seaching for: ${this.searchForThis}</h2>
