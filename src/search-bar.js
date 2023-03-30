@@ -10,7 +10,13 @@ class MySearchBar extends LitElement {
       
     }
     .searchBar {
-      width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #c8c8c8;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      padding: 12px 20px 12px 40px;
     }
   `;
 

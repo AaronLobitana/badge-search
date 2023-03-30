@@ -23,6 +23,31 @@ class BadgeSearch extends LitElement {
     .wrapper{
       background-color: white;
     }
+
+    .exploreBox{
+      width: 80%;
+      background-color: white;
+      font-size: 24px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .searchBar{
+      width: 80%;
+      margin: left;
+      padding: 12px;
+    }
+
+    .allButton{
+      font-size: 18px;
+      color: blue;
+      background-color: white;
+      border: 2px solid gray;
+      border-bottom: 2px solid white;
+      padding: 10px;
+    
+    }
+    
     
   `;
 
@@ -69,12 +94,28 @@ class BadgeSearch extends LitElement {
   render() {
     return html`
 
-      
-      <div class="wrapper">
+      <div class="exploreBox">
+        Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
 
         <div class="searchBar">
           <search-bar></search-bar>
         </div>
+
+        <div class="navigation">
+          <button class="allButton">All</button>
+          <button class="missionsButton">Missions</button>
+          <button class="groupsButton">Groups</button>
+          <button class="badgesButton">Badges</button>
+          <button class="peopleButton">People</button>
+
+        </div>
+      </div>
+
+      <div class="wrapper">
+
+        
+
+        
 
         
       </div>
