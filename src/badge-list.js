@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit';
-import "";
 
 
 export class MyBadgeList extends LitElement{
@@ -19,7 +18,11 @@ export class MyBadgeList extends LitElement{
         super();
         this.badges = [];
         this.updateBadges();
+        this.searchForThis = 'dev';
+        this.searchThis(this.data, this.searchForThis);
     }
+
+
 
     updateBadges() {
         const address = '../api/badgearray';
@@ -33,6 +36,20 @@ export class MyBadgeList extends LitElement{
             this.badges = data;
         });
     }
+
+    searchThis(Array, searchForThis){
+        return Array.filter((thing) => 
+        {
+          for (var item in thing)
+          {
+            if (thing[item].toString().toLowerCase().includes(this.searchForThis.toLowerCase()))
+            {
+              return true;
+            }
+          }
+          return false;
+        });
+      }
 
 
     static get styles(){
@@ -52,6 +69,7 @@ export class MyBadgeList extends LitElement{
 
     `;
     }
+    
 
     render() {
         return html`

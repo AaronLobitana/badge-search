@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import "./search-bar";
+import "./badge-list";
+import { MyBadgeList } from './badge-list';
 
 
 class BadgeSearch extends LitElement {
@@ -20,10 +22,7 @@ class BadgeSearch extends LitElement {
       color: red;
     }
 
-    .wrapper{
-      background-color: white;
-    }
-
+    
     .exploreBox{
       width: 80%;
       background-color: white;
@@ -38,17 +37,50 @@ class BadgeSearch extends LitElement {
       padding: 12px;
     }
 
-    .allButton{
-      font-size: 18px;
-      color: blue;
+    .badgeList{
+      width: 80%;
       background-color: white;
-      border: 2px solid gray;
-      border-bottom: 2px solid white;
+      font-size: 20px;
+      margin: auto;
       padding: 10px;
-    
     }
-    
-    
+
+    .allButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .missionsButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .groupsButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .badgesButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+    .peopleButton{
+      padding: 12px;
+      font-size: 16px;
+      color: rgb(0,132,255);
+      background-color: white;
+      border: 2px solid lightgray;
+    }
+
   `;
 
   constructor() {
@@ -73,6 +105,7 @@ class BadgeSearch extends LitElement {
       }
     ];    
     this.searchForThis = 'dev';
+    
 
     this.searchThis(this.data, this.searchForThis);
   }
@@ -99,6 +132,7 @@ class BadgeSearch extends LitElement {
 
         <div class="searchBar">
           <search-bar></search-bar>
+
         </div>
 
         <div class="navigation">
@@ -111,16 +145,22 @@ class BadgeSearch extends LitElement {
         </div>
       </div>
 
-      <div class="wrapper">
-
+      <div class="badgeList">
+        <div class="listHeading">
+          Looking for something brand spankin' new? Here are the most recently added badges!
+        </div>
         
-
-        
-
-        
+        <mybadge-list></mybadge-list>
       </div>
 
+      
+
+
+      
+      
+
       <div class="blah">
+                
         <h2>You are seaching for: ${this.searchForThis}</h2>
         <h2>${this.searchThis(this.data,this.searchForThis)}</h2>
         <h2>${this.header}</h2>
@@ -129,6 +169,10 @@ class BadgeSearch extends LitElement {
       
     `;
   }
+
+  
 }
+
+
 
 customElements.define('badge-search', BadgeSearch);
