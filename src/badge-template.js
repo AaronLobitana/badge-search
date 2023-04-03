@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
-import { SimpleIcon } from '@lrnwebcomponents/simple-icon/simple-icon.js';
 
 class BadgeTemplate extends LitElement {
   static properties = {
@@ -66,6 +65,15 @@ class BadgeTemplate extends LitElement {
       align-self: flex-end;
       vertical-align: bottom;
     } 
+    simple-icon {
+      --simple-icon-width:100px;
+      --simple-icon-height:100px;
+    }
+    .name {
+      margin: 12px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
   `;
 
   constructor() {
@@ -74,23 +82,22 @@ class BadgeTemplate extends LitElement {
     this.creatorName = 'Prof. BTO Pro';
     this.courseName =  'IST 256';
     this.courseCategory = 'Information Sciences and Technology';
-    this.courseIcon = 'extension';
-    this.courseColor = 'Red'; 
+    this.courseIcon = 'save';
+    this.courseColor = 'red'; 
   }
 
   render() {
 
 return html`
-<simple-iconset-demo></simple-iconset-demo>
   <div class="wrapper">
     <div class="frame">
       <div class="categoryLabel">
         <h4>${this.courseCategory}</h4>
       <div>
-      <simple-icon class="course-icon" accent-color="green" icon=${this.courseIcon} style="--simple-icon-width:100px;--simple-icon-height:100px;">
+      <simple-icon class="course-icon" accent-color="green" icon=${this.courseIcon}>
 </simple-icon>
       <div class="courseTitle">
-        <h4>${this.courseName}</h4>
+        <div class="name">${this.courseName}</div>
       </div>
       <div class="creator-title">
         <span>Creator: ${this.creatorName}</span>

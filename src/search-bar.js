@@ -31,26 +31,28 @@ class MySearchBar extends LitElement {
   constructor() {
     super();
     this.topic = 'Search Content, Topics, and People';
-    this.word = "word";
-    //this.takeInput();
-    
+    this.word = "word";    
   }
 
+  inputChange(e) {
+    this.word = this.shadowRoot.querySelector('input').value;
+  }
 
-  /**
-  takeInput(){
-    document.querySelector('#searchBar').addEventListener('input', (e) => {
-    const word = e.target.value;
-  });
-  };
-  */
-
-
+  update(changedProperties) {
+    super.update(changedProperties);
+    if (changedProperties.has('word')) {
+      this.dispatchEvent(new CustomEvent('word-changed', {
+        detail: {
+          value: this.word
+        }
+      }));
+    }
+  }
  
   render() {
     return html`
     <div class="myBar">
-      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" id="searchBar" placeholder="${this.topic}" />
+      <simple-icon class="searchIcon" accent-color="black" icon="search"></simple-icon><input type="text" id="searchBar" placeholder="${this.topic}" @input="${this.inputChange}" />
       
     </div>
 
