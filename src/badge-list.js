@@ -20,7 +20,6 @@ export class MyBadgeList extends LitElement{
         this.badges = [];
         this.updateBadges();
         this.searchForThis = 'dev';
-        this.searchThis(this.data, this.searchForThis);
     }
 
 
@@ -38,8 +37,8 @@ export class MyBadgeList extends LitElement{
         });
     }
 
-    searchThis(Array, searchForThis){
-        return Array.filter((thing) => 
+    searchThis(items, searchForThis){
+        return items.filter((thing) => 
         {
           for (var item in thing)
           {

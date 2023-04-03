@@ -110,20 +110,22 @@ class BadgeSearch extends LitElement {
     this.searchThis(this.data, this.searchForThis);
   }
 
-  searchThis(Array, searchForThis){
-      return Array.filter((thing) => 
+  searchThis(items, searchForThis){
+      return items.filter((thing) => 
       {
         for (var item in thing)
         {
-          if (thing[item].toString().toLowerCase().includes(this.searchForThis.toLowerCase()))
+          if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
           {
             return true;
           }
         }
         return false;
       });
-    }
-
+  }
+  wordChanged(e) {
+    this.searchForThis = e.detail.value;
+  }
   render() {
     return html`
 
@@ -131,7 +133,7 @@ class BadgeSearch extends LitElement {
         Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
 
         <div class="searchBar">
-          <search-bar></search-bar>
+          <search-bar @word-changed="${this.wordChanged}"></search-bar>
 
         </div>
 
@@ -164,7 +166,13 @@ class BadgeSearch extends LitElement {
       <div class="blah">
                 
         <h2>You are seaching for: ${this.searchForThis}</h2>
-        <h2>${this.searchThis(this.data,this.searchForThis)}</h2>
+        ${this.searchThis(this.data,this.searchForThis).map((item) => html`
+          <div>
+            <h2>${item.name}</h2>
+            <h2>${item.age}</h2>
+            <h2>${item.job}</h2>
+          </div>
+        `)}
         <h2>${this.header}</h2>
       </div>
 
