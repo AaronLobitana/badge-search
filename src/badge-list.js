@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import "./badge-template";
 
 
 export class MyBadgeList extends LitElement{
@@ -52,6 +53,8 @@ export class MyBadgeList extends LitElement{
       }
 
 
+
+
     static get styles(){
         return css`
         
@@ -74,10 +77,11 @@ export class MyBadgeList extends LitElement{
     render() {
         return html`
         <div class="box">
+            <div>test</div>
 
             ${this.badges.map(badge => html`
             <div class="item">
-                
+                <badge-template creatorName="${badge.creatorName}" courseName="${badge.courseName}" courseCategory="${badge.courseCategory}" courseIcon="${badge.courseIcon}" courseColor="${badge.courseColor}"></badge-template>
             </div>
             `)}
 

@@ -149,8 +149,10 @@ class BadgeSearch extends LitElement {
         <div class="listHeading">
           Looking for something brand spankin' new? Here are the most recently added badges!
         </div>
-        
+
         <mybadge-list></mybadge-list>
+        
+        
       </div>
 
       

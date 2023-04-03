@@ -1,23 +1,14 @@
 
 export default async function handler(request, res) {
 
-    const badgelist = 
-    [
-        {
-            "name": "john",
-            "age": "20",
-            "job": "developer"
-          },
-          {
-            "name": "tim",
-            "age": "40",
-            "job": "engineer"
-          },
-          {
-            "name": "duncan",
-            "age": "20",
-            "job": "software developer"
-          }
+    const badgelist = [
+      {
+        "creatorName": "Robert Borysiewicz",
+        "courseName": "IST 256",
+        "courseCategory": "Information Science and Technology",
+        "courseIcon": "search",
+        "courseColor": "red",
+      }
     ];
   
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
