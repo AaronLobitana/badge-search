@@ -1,7 +1,8 @@
 
 export default async function handler(request, res) {
 
-    const badgelist = [
+    const badgelist = 
+    [
       {
         "creatorName": "Robert Borysiewicz",
         "courseName": "IST 256",
