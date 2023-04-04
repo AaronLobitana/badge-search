@@ -123,9 +123,11 @@ class BadgeSearch extends LitElement {
         return false;
       });
   }
+
   wordChanged(e) {
     this.searchForThis = e.detail.value;
   }
+  
   render() {
     return html`
 

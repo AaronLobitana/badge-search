@@ -19,7 +19,8 @@ export class MyBadgeList extends LitElement{
         super();
         this.badges = [];
         this.updateBadges();
-        this.searchForThis = 'dev';
+        this.searchForThis = 'aaron';
+        this.searchThis(this.badges,this.searchForThis);
     }
 
 
@@ -42,14 +43,14 @@ export class MyBadgeList extends LitElement{
         {
           for (var item in thing)
           {
-            if (thing[item].toString().toLowerCase().includes(this.searchForThis.toLowerCase()))
+            if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
             {
               return true;
             }
           }
           return false;
         });
-      }
+    }
 
 
 
@@ -76,9 +77,9 @@ export class MyBadgeList extends LitElement{
     render() {
         return html`
         <div class="box">
-            <div>test</div>
-
-            ${this.badges.map(badge => html`
+            <div>You are searching for: ${this.searchForThis}</div>
+            
+            ${this.searchThis(this.badges,this.searchForThis).map(badge => html`
             <div class="item">
                 <badge-template creatorName="${badge.creatorName}" courseName="${badge.courseName}" courseCategory="${badge.courseCategory}" courseIcon="${badge.courseIcon}" courseColor="${badge.courseColor}"></badge-template>
             </div>
