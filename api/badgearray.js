@@ -9,6 +9,27 @@ export default async function handler(request, res) {
         "courseCategory": "Information Science and Technology",
         "courseIcon": "search",
         "courseColor": "red",
+      },
+      {
+        "creatorName": "Aaron Lobitana",
+        "courseName": "IST 256",
+        "courseCategory": "Information Science and Technology",
+        "courseIcon": "search",
+        "courseColor": "red",
+      },
+      {
+        "creatorName": "Robert Borysiewicz",
+        "courseName": "IST 256",
+        "courseCategory": "Information Science and Technology",
+        "courseIcon": "search",
+        "courseColor": "red",
+      },
+      {
+        "creatorName": "Robert Borysiewicz",
+        "courseName": "IST 256",
+        "courseCategory": "Information Science and Technology",
+        "courseIcon": "search",
+        "courseColor": "red",
       }
     ];
   
