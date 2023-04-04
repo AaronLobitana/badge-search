@@ -11,6 +11,7 @@ export class MyBadgeList extends LitElement{
     static get properties() {
         return {
             badges: { type: Array },
+            searchForThis: { type: String }
         }
 
     }
@@ -19,7 +20,7 @@ export class MyBadgeList extends LitElement{
         super();
         this.badges = [];
         this.updateBadges();
-        this.searchForThis = 'aaron';
+        this.searchForThis = '';
         this.searchThis(this.badges,this.searchForThis);
     }
 
@@ -66,6 +67,7 @@ export class MyBadgeList extends LitElement{
             display: flex;
         }
         .item{
+            width: 80%;
             display: inline-flex;
         }
 
@@ -77,7 +79,7 @@ export class MyBadgeList extends LitElement{
     render() {
         return html`
         <div class="box">
-            <div>You are searching for: ${this.searchForThis}</div>
+            
             
             ${this.searchThis(this.badges,this.searchForThis).map(badge => html`
             <div class="item">

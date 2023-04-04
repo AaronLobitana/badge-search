@@ -17,12 +17,6 @@ class BadgeSearch extends LitElement {
       font-size: 20px;
     }
 
-    .blah{
-      font-size: 20px;
-      color: red;
-    }
-
-    
     .exploreBox{
       width: 80%;
       background-color: white;
@@ -86,48 +80,15 @@ class BadgeSearch extends LitElement {
   constructor() {
     super();
     this.header = 'Badge Search';
-    this.data = 
-    [
-      {
-        "name": "john",
-        "age": "20",
-        "job": "developer"
-      },
-      {
-        "name": "tim",
-        "age": "40",
-        "job": "engineer"
-      },
-      {
-        "name": "duncan",
-        "age": "20",
-        "job": "software developer"
-      }
-    ];    
-    this.searchForThis = 'dev';
-    
-
-    this.searchThis(this.data, this.searchForThis);
+    this.searchForThis = '';
   }
 
-  searchThis(items, searchForThis){
-      return items.filter((thing) => 
-      {
-        for (var item in thing)
-        {
-          if (thing[item].toString().toLowerCase().includes(searchForThis.toLowerCase()))
-          {
-            return true;
-          }
-        }
-        return false;
-      });
-  }
+  
 
   wordChanged(e) {
     this.searchForThis = e.detail.value;
   }
-  
+
   render() {
     return html`
 
@@ -154,28 +115,9 @@ class BadgeSearch extends LitElement {
           Looking for something brand spankin' new? Here are the most recently added badges!
         </div>
 
-        <mybadge-list></mybadge-list>
+        <mybadge-list searchForThis="${this.searchForThis}"></mybadge-list>
         
         
-      </div>
-
-      
-
-
-      
-      
-
-      <div class="blah">
-                
-        <h2>You are seaching for: ${this.searchForThis}</h2>
-        ${this.searchThis(this.data,this.searchForThis).map((item) => html`
-          <div>
-            <h2>${item.name}</h2>
-            <h2>${item.age}</h2>
-            <h2>${item.job}</h2>
-          </div>
-        `)}
-        <h2>${this.header}</h2>
       </div>
 
       

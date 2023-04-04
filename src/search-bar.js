@@ -31,7 +31,7 @@ class MySearchBar extends LitElement {
   constructor() {
     super();
     this.topic = 'Search Content, Topics, and People';
-    this.word = "word";    
+    this.word = "";    
   }
 
   inputChange(e) {
