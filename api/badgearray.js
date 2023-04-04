@@ -11,7 +11,7 @@ export default async function handler(request, res) {
         "courseColor": "red",
       },
       {
-        "creatorName": "Aaron Lobitana",
+        "creatorName": "Robert Borysiewicz",
         "courseName": "IST 256",
         "courseCategory": "Information Science and Technology",
         "courseIcon": "search",

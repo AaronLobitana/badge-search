@@ -158,6 +158,11 @@ class BadgeSearch extends LitElement {
       </div>
 
       
+
+
+      
+      
+
       <div class="blah">
                 
         <h2>You are seaching for: ${this.searchForThis}</h2>
