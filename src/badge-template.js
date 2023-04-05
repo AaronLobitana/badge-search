@@ -8,7 +8,7 @@ class BadgeTemplate extends LitElement {
     courseName: {type: String},
     courseCategory: {type: String},
     courseIcon: {type: String},
-    courseColor: {type: String}
+    courseColor: {type: String,}
   }
 
   static styles = css`
@@ -44,7 +44,7 @@ class BadgeTemplate extends LitElement {
     .courseTitle {
       max-width: 250px;
       max-height: 230px;
-      padding-top: 32px;
+      padding-top: 24px;
       font-size: 250%;
       word-wrap: break-word;
     }
@@ -58,12 +58,13 @@ class BadgeTemplate extends LitElement {
     }
     .creator-title {
       display: flex;
-      font-size: 120%;
+      font-size: 100%;
       vertical-align: bottom;
     }
     .creator-title span {
       align-self: flex-end;
       vertical-align: bottom;
+      margin-top: 18px;
     } 
     simple-icon {
       --simple-icon-width:100px;
@@ -71,7 +72,7 @@ class BadgeTemplate extends LitElement {
     }
     .name {
       margin: 12px 0;
-      font-size: 20px;
+      font-size: 40px;
       font-weight: bold;
     }
   `;
@@ -83,7 +84,7 @@ class BadgeTemplate extends LitElement {
     this.courseName =  'IST 256';
     this.courseCategory = 'Information Sciences and Technology';
     this.courseIcon = 'save';
-    this.courseColor = 'red'; 
+    this.courseColor = 'green'; 
   }
 
   render() {

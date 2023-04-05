@@ -17,6 +17,11 @@ class BadgeSearch extends LitElement {
       font-size: 20px;
     }
 
+    .overall{
+      width: 100%;
+      display: block;
+    }
+
     .exploreBox{
       width: 80%;
       background-color: white;
@@ -37,6 +42,7 @@ class BadgeSearch extends LitElement {
       font-size: 20px;
       margin: auto;
       padding: 10px;
+      display: block;
     }
 
     .allButton{
@@ -92,32 +98,36 @@ class BadgeSearch extends LitElement {
   render() {
     return html`
 
-      <div class="exploreBox">
-        Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
+      <div class="overall">
 
-        <div class="searchBar">
-          <search-bar @word-changed="${this.wordChanged}"></search-bar>
+        <div class="exploreBox">
+          Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
 
+          <div class="searchBar">
+            <search-bar @word-changed="${this.wordChanged}"></search-bar>
+
+          </div>
+
+          <div class="navigation">
+            <button class="allButton">All</button>
+            <button class="missionsButton">Missions</button>
+            <button class="groupsButton">Groups</button>
+            <button class="badgesButton">Badges</button>
+            <button class="peopleButton">People</button>
+
+          </div>
         </div>
 
-        <div class="navigation">
-          <button class="allButton">All</button>
-          <button class="missionsButton">Missions</button>
-          <button class="groupsButton">Groups</button>
-          <button class="badgesButton">Badges</button>
-          <button class="peopleButton">People</button>
+        <div class="badgeList">
+          <div class="listHeading">
+            Looking for something brand spankin' new? Here are the most recently added badges!
+          </div>
 
-        </div>
-      </div>
-
-      <div class="badgeList">
-        <div class="listHeading">
-          Looking for something brand spankin' new? Here are the most recently added badges!
+          <mybadge-list searchForThis="${this.searchForThis}"></mybadge-list>
+          
+          
         </div>
 
-        <mybadge-list searchForThis="${this.searchForThis}"></mybadge-list>
-        
-        
       </div>
 
       

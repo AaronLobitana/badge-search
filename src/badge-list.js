@@ -59,15 +59,13 @@ export class MyBadgeList extends LitElement{
     static get styles(){
         return css`
         
-        :host{
-            display: block;
-        }
-        .box{
+        
+        .box {
+            width: 100%;
             border: 2px solid black;
-            display: flex;
+            display: inline-flex;
         }
-        .item{
-            width: 80%;
+        .item {
             display: inline-flex;
         }
 
