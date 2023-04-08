@@ -25,7 +25,6 @@ class MySearchBar extends LitElement {
     }
     
     
-    
   `;
 
   constructor() {

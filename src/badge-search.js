@@ -80,6 +80,23 @@ class BadgeSearch extends LitElement {
       background-color: white;
       border: 2px solid lightgray;
     }
+    .listHeading{
+      padding-bottom: 20px;
+    }
+    .explore{
+      width: 80%;
+      background-color: light;
+      font-size: 48px;;
+      margin: auto;
+      padding: 10px;
+      display: block;
+      padding: 30px 30px 30px 0px;
+    }
+    .graySpace{
+      background-color: light;
+      height: 40px;
+    }
+    
 
   `;
 
@@ -100,6 +117,10 @@ class BadgeSearch extends LitElement {
 
       <div class="overall">
 
+        <div class="explore">
+          Explore
+        </div>
+
         <div class="exploreBox">
           Explore our content in a self-guided manner. Want us to guide you through learning new skills? Try out Missions. Looking for other people with similar focus? Find them in Groups. Interested in viewing all the options within a certain subject area? You can do that with Topics.
 
@@ -116,6 +137,9 @@ class BadgeSearch extends LitElement {
             <button class="peopleButton">People</button>
 
           </div>
+        </div>
+        <div class="graySpace">
+
         </div>
 
         <div class="badgeList">

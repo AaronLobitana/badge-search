@@ -62,7 +62,7 @@ export class MyBadgeList extends LitElement{
         
         .box {
             width: 100%;
-            border: 2px solid black;
+            border: 2px solid lightgray;
             display: block;
             overflow: auto;
             height: 500px;
