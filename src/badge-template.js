@@ -13,7 +13,7 @@ class BadgeTemplate extends LitElement {
 
   static styles = css`
     .wrapper {
-      background-color: green;
+      background-color: rgb(0,132,255);
       width: 420px;
       height: 250px;
       border: 3px solid black;
@@ -95,7 +95,7 @@ return html`
       <div class="categoryLabel">
         <h4>${this.courseCategory}</h4>
       <div>
-      <simple-icon class="course-icon" accent-color="green" icon=${this.courseIcon}>
+      <simple-icon class="course-icon" accent-color="blue" icon=${this.courseIcon}>
 </simple-icon>
       <div class="courseTitle">
         <div class="name">${this.courseName}</div>
